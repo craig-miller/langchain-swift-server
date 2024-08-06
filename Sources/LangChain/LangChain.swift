@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CommonCrypto
+//import CommonCrypto
 import CryptoSwift
 
 enum LangChainError: Error {
