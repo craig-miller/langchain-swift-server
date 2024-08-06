@@ -1,10 +1,11 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by 顾艳华 on 2023/11/17.
 //
-import CryptoKit
+// import CryptoKit
+import Crypto
 import Foundation
 
 public class ParentDocumentRetriever: MultiVectorRetriever {
@@ -16,7 +17,7 @@ public class ParentDocumentRetriever: MultiVectorRetriever {
     let child_splitter: TextSplitter
     // The text splitter to use to create child documents."""
 
-    
+
     let parent_splitter: TextSplitter?
     //The text splitter to use to create parent documents.
     //If none, then the parent documents will be the raw documents passed in.
@@ -31,7 +32,7 @@ public class ParentDocumentRetriever: MultiVectorRetriever {
             parent_documents = documents
         }
         let doc_ids = parent_documents.map{_ in UUID().uuidString}
-        
+
         var docs: [Document] = []
         var full_docs:[(String, String)] = []
         for i in 0..<parent_documents.count {
@@ -48,7 +49,7 @@ public class ParentDocumentRetriever: MultiVectorRetriever {
         print("🚀 End add sub document \(docs.count), main document \(full_docs.count)")
         return doc_ids
     }
-    
+
     public func remove_documents(documents: [Document]) async {
         if documents.isEmpty {
             return
@@ -63,7 +64,7 @@ public class ParentDocumentRetriever: MultiVectorRetriever {
         await self.vectorstore.remove_documents(sha256s: all_sub_docs.map {sha256(str: $0.page_content)})
         print("🚀 End remove sub document \(all_sub_docs.count), main document \(documents.count)")
     }
-    
+
     fileprivate func sha256(str: String) -> String {
         let data = Data(str.utf8)
         let hash = SHA256.hash(data: data)
