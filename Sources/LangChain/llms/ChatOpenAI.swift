@@ -6,6 +6,9 @@
 //
 
 import Foundation
+#if os(linux)
+import NetworkFoundation
+#endif
 import NIOPosix
 import AsyncHTTPClient
 import OpenAIKit
