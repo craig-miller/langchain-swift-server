@@ -7,7 +7,7 @@
 
 import Foundation
 #if os(linux)
-import NetworkFoundation
+import FoundationNetworking
 #endif
 import NIOPosix
 import AsyncHTTPClient
