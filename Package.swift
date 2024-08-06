@@ -51,7 +51,7 @@ let package = Package(
                 //                .product(name: "GoogleGenerativeAI", package: "generative-ai-swift"),
                 //                .product(name: "SwiftyNotion", package: "SwiftyNotion"),
                 .product(name: "FeedKit", package: "FeedKit"),
-                .product(name: "Crypto", package: "Crypto")
+                .product(name: "Crypto", package: "swift-crypto"),
                 .product(name: "CryptoSwift", package: "CryptoSwift")
             ]
 
