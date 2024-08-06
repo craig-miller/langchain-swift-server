@@ -7,6 +7,7 @@
 
 import Foundation
 import CommonCrypto
+import CryptoSwift
 
 enum LangChainError: Error {
     case LoaderError(String)
