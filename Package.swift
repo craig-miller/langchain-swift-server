@@ -30,8 +30,8 @@ let package = Package(
         .package(url: "https://github.com/buhe/similarity-search-kit", from: "0.0.16"),
         //        .package(url: "https://github.com/google/generative-ai-swift", .upToNextMajor(from: "0.4.4")),
         //        .package(url: "https://github.com/buhe/SwiftyNotion", .upToNextMajor(from: "0.1.5")),
-            .package(url: "https://github.com/nmdias/FeedKit", .upToNextMajor(from: "9.1.2")),
-//      .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0" ..< "4.0.0"),
+        .package(url: "https://github.com/nmdias/FeedKit", .upToNextMajor(from: "9.1.2")),
+        .package(url: "https://github.com/apple/swift-crypto.git", "1.0.0" ..< "4.0.0"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.8.3")
     ],
     targets: [
@@ -50,8 +50,8 @@ let package = Package(
                 //                .product(name: "SimilaritySearchKitDistilbert", package: "similarity-search-kit", condition: .when(platforms: [.macOS, .iOS, .visionOS])),
                 //                .product(name: "GoogleGenerativeAI", package: "generative-ai-swift"),
                 //                .product(name: "SwiftyNotion", package: "SwiftyNotion"),
-                    .product(name: "FeedKit", package: "FeedKit"),
-//              .product(name: "Crypto", package: "Crypto")
+                .product(name: "FeedKit", package: "FeedKit"),
+                .product(name: "Crypto", package: "Crypto")
                 .product(name: "CryptoSwift", package: "CryptoSwift")
             ]
 
